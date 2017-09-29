@@ -11,6 +11,11 @@ int check_If_Correct(int number){
   return 0;
 }
 
+void get_operands(double* operand1, double* operand2)
+{
+  
+}
+
 int users_choice(){
   int choice = 0;
   int check;
@@ -34,5 +39,11 @@ int users_choice(){
 
 int main(int argc, char *argv[]) {
   int choice = users_choice();
+  double operand1, operand2;
+
+  if (choice == 1) {
+    get_operands(&operand1, &operand2);
+    printf("Result of %f + %f = %f", operand1, operand2, operand1 + operand2);
+  }
   return 0;
 }
