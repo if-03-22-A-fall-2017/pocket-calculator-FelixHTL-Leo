@@ -13,7 +13,9 @@ int check_If_Correct(int number){
 
 void get_operands(double* operand1, double* operand2)
 {
-  
+    printf("Erster Operande/Zweiter Operand: ");
+    scanf("%lf/%lf", operand1, operand2 );
+
 }
 
 int users_choice(){
@@ -40,10 +42,27 @@ int users_choice(){
 int main(int argc, char *argv[]) {
   int choice = users_choice();
   double operand1, operand2;
-
-  if (choice == 1) {
-    get_operands(&operand1, &operand2);
-    printf("Result of %f + %f = %f", operand1, operand2, operand1 + operand2);
+  get_operands(&operand1, &operand2);
+  if(choice == 0){
+    return 0;
   }
+  else if (choice == 1) {
+    printf("Result of %lf + %lf = %lf\n", operand1, operand2, operand1 + operand2);
+  }
+  else if(choice == 2){
+    printf("Result of %lf - %lf = %lf\n", operand1, operand2, operand1 - operand2);
+  }
+  else if(choice == 3){
+    printf("Result of %lf * %lf = %lf\n", operand1, operand2, operand1 * operand2);
+  }
+  else if(choice == 4){
+    if(operand2 == 0){
+      printf("Division durch null!!!\n");
+      return 0;
+    }
+    printf("Result of %lf / %lf = %lf\n", operand1, operand2, operand1 / operand2);
+  }
+
+
   return 0;
 }
